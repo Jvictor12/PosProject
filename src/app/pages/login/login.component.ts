@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
-import { FormBuilder, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AutorizacaoService } from 'src/app/services/autorizacao.service';
 
 
 @Component({
@@ -8,23 +9,10 @@ import { FormBuilder, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  private fb = inject(FormBuilder);
-  addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });
-
-  hasUnitNumber = false;
+export class LoginComponent implements OnInit{
+  
+  addressForm!: FormGroup;
+  hasUnitNumber!: boolean;
 
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
@@ -87,6 +75,31 @@ export class LoginComponent {
     {name: 'Wisconsin', abbreviation: 'WI'},
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
+
+  constructor (
+    private fb: FormBuilder,
+    private autorizacaoService: AutorizacaoService
+  ){}
+
+  ngOnInit() {
+     this.hasUnitNumber = false;
+     this.buildForm(); 
+  }
+
+  buildForm() {
+    this.addressForm = this.fb.group({
+      firstName: [null, Validators.required],
+      email: [null, Validators.required],
+    })
+  }
+
+  loginClick(){
+    if (this.autorizacaoService.obterLoginStatus()) {
+      this.autorizacaoService.deslogar()
+    } else {
+      this.autorizacaoService.autorizar()
+    }
+  }
 
   onSubmit(): void {
     alert('Thanks!');
