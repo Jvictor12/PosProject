@@ -9,7 +9,7 @@
         },
         {
             "id" : 2,
-            "firstName": "victor",
+            "name": "victor",
             "email": "victor@gmail.com",
             "phone": 123,
             "password": "fdsfds"
