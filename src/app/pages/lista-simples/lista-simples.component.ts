@@ -26,11 +26,10 @@ export class ListaSimplesComponent implements OnInit{
       error: (err: any) => {
           console.log("Ocorreu um erro")
           console.log(err)
-
       }
     })
   }
   goToDetail(user: User){
-    this.router.navigate([`detalhe/:${user.id}/:${user.phone}`])
+    this.router.navigate([`detalhe/${user.id}/${user.phone}`])
   }
 }

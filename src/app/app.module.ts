@@ -57,6 +57,7 @@ import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.compo
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,

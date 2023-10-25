@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.formLogin {
+  margin: 1.5rem;
+  max-width: 70%;
+}
+
 .shipping-card {
   min-width: 120px;
   margin: 20px auto;

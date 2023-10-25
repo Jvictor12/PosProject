@@ -1,5 +1,5 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
+  <mat-card class="shipping-card formLogin">
     <mat-card-header>
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
@@ -7,15 +7,11 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input
-              matInput
-              placeholder="First name"
-              formControlName="firstName"
-            />
+            <input matInput placeholder="Email" formControlName="email" />
             <mat-error
-              *ngIf="addressForm.controls['firstName'].hasError('required')"
+              *ngIf="addressForm.controls['email'].hasError('required')"
             >
-              First name is <strong>required</strong>
+              Email é <strong>obrigatório</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -23,18 +19,30 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Email" formControlName="email" />
+            <input
+              type="password"
+              matInput
+              placeholder="Senha"
+              formControlName="password"
+            />
             <mat-error
-              *ngIf="addressForm.controls['email'].hasError('required')"
+              *ngIf="addressForm.controls['password'].hasError('required')"
             >
-              Email <strong>required</strong>
+              A senha é <strong>obrigatória</strong>
             </mat-error>
           </mat-form-field>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+      <button
+        mat-raised-button
+        [disabled]="!addressForm.valid"
+        color="primary"
+        type="submit"
+      >
+        Cadastrar
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

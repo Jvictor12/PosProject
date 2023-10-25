@@ -5,18 +5,17 @@ import { User } from '../models/users';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-type' : 'aplication/json'})
+  headers: new HttpHeaders({'Content-type' : 'application/json'})
 }
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  BASE_URL: String = 'http://localhost:3000' 
+  BASE_URL: String = 'http://localhost:3000/' 
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]>{
-
     return this.http.get<User[]>(this.BASE_URL + 'users')
   }
 

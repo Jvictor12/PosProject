@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import studentsData from 'students.json'
+import studentsData from '../../../assets/students.json'
 
 interface Student {
   id: Number;

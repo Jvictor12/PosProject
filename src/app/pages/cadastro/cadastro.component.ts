@@ -1,7 +1,5 @@
 import { Component, inject } from '@angular/core';
-
 import { FormBuilder, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-cadastro',
@@ -11,16 +9,17 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class CadastroComponent {
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    id: '', 
-    firstName: [null, Validators.required],
-    email: [null, Validators.required],
+    firstName: [null, Validators.compose([
+      Validators.required, Validators.minLength(5), Validators.maxLength(50)
+    ])],
+    email: [null, Validators.compose([
+      Validators.required, Validators.minLength(10), Validators.maxLength(30)
+    ])],
     phone: [null, Validators.required],
     password: [null, Validators.required]
   });
 
-  hasUnitNumber = false;
-
   onSubmit(): void {
-    alert('Thanks!');
+    alert('Entrou no OnSubmit');
   }
 }
