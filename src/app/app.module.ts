@@ -29,6 +29,7 @@ import { Page2Component } from './pages/sub-route/page2/page2.component';
 import { PrivadoComponent } from './pages/privado/privado.component';
 import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.compo
     Page2Component,
     PrivadoComponent,
     DetalheComponent,
-    ListaSimplesComponent
+    ListaSimplesComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
