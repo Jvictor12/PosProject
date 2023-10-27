@@ -59,7 +59,7 @@
     <mat-card-actions>
       <button
         mat-raised-button
-        disabled="[!addressForm.valid]"
+        [disabled]="!addressForm.valid"
         color="primary"
         type="submit"
       >
