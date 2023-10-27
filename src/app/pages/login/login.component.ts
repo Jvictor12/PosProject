@@ -27,10 +27,19 @@ export class LoginComponent implements OnInit{
   buildForm() {
     this.addressForm = this.fb.group({
       email: [null, Validators.compose([
-        Validators.required, Validators.minLength(10),Validators.maxLength(30)
+        Validators.required, Validators.minLength(10),Validators.maxLength(30), Validators.email
       ])],
       password: [null, Validators.required]
     })
+  }
+
+  email = this.addressForm.controls['email']
+
+  getErrorMessage() {
+    if(this.email.hasError('required')){
+      return 'O email é obrigatório'
+    }
+    return this.email.hasError('email') ? 'Email inválido' : '';
   }
 
   loginClick(){

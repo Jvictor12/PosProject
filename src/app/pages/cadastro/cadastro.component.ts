@@ -19,6 +19,16 @@ export class CadastroComponent {
     password: [null, Validators.required]
   });
 
+  email = this.addressForm.controls['email']
+
+  getErrorMessage(){
+    if(this.email.hasError('required')){
+      return 'O email é obrigatório'
+    }
+
+    return this.email.hasError('email') ? 'Email inválido' : '';
+  }
+
   onSubmit(): void {
     alert('Entrou no OnSubmit');
   }
