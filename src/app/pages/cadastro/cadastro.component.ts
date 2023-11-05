@@ -16,6 +16,7 @@ export class CadastroComponent {
     email: ['', Validators.compose([
       Validators.required, Validators.minLength(10), Validators.maxLength(50)
     ])],
+    cpf: ['', Validators.required],
     phone: ['', Validators.required],
     password: ['', Validators.required]
   });
