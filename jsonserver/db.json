@@ -1,18 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": 50,
       "name": "Joao",
       "email": "joao@gmail.com",
       "phone": 12345,
+      "cpf": "27960803072",
       "password": "1234"
     },
     {
-      "id": 2,
+      "id": 51,
       "name": "victor",
       "email": "victor@gmail.com",
       "phone": 123,
+      "cpf": "74878392061",
       "password": "fdsfds"
+    },
+    {
+      "id": "1",
+      "name": "Joao Victor",
+      "email": "01joaovictordvp@gmail.com",
+      "phone": "74988752030",
+      "cpf": "86064048530",
+      "password": "asd123"
     }
   ]
 }

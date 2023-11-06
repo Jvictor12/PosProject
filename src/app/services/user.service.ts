@@ -19,7 +19,7 @@ export class UserService {
     return this.http.get<User[]>(this.BASE_URL + 'users')
   }
 
-  addUsers(user: User): Observable<User> {
+  addUser(user: User): Observable<User> {
     return this.http.post<User>(this.BASE_URL + 'users', user, httpOptions)
   } 
 
