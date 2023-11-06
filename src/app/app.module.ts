@@ -34,6 +34,11 @@ import { UserService } from './services/user.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ModalComponent } from './pages/modal/modal.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     PrivadoComponent,
     DetalheComponent,
     ListaSimplesComponent,
-    EditarComponent
+    EditarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +82,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTooltipModule,
     MatListModule
   ],
   providers: [provideNgxMask(), UserService],

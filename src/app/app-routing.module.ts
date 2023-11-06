@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { ModalComponent } from './pages/modal/modal.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'cadastro', component: CadastroComponent},
   {path: 'editar', component: EditarComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'modal', component: ModalComponent},
   {path: 'detalhe/:id/:phone', component: DetalheComponent},
   {path: 'json', component: ManipulandoJsonComponent},
   {path: 'subroute', component: SubRouteComponent,
