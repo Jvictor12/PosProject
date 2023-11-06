@@ -34,11 +34,14 @@ import { UserService } from './services/user.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { ModalComponent } from './pages/modal/modal.component';
+import { DialogContentExampleDialog, ModalComponent } from './pages/modal/modal.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     Page2Component,
     PrivadoComponent,
     DetalheComponent,
+    DialogContentExampleDialog,
     ListaSimplesComponent,
     EditarComponent,
     ModalComponent
@@ -86,7 +90,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [provideNgxMask(), UserService],
   bootstrap: [AppComponent]

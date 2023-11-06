@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ListarComponent } from './pages/listar/listar.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { ManipulandoJsonComponent } from './pages/manipulando-json/manipulando-json.component';
 import { SubRouteComponent } from './pages/sub-route/sub-route.component';
@@ -14,15 +13,16 @@ import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { ModalComponent } from './pages/modal/modal.component';
+import { ListarComponent } from './pages/listar/listar.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'listar', component: ListarComponent},
   {path: 'listar-simples', component: ListaSimplesComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'editar', component: EditarComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'listar', component: ListarComponent},
   {path: 'modal', component: ModalComponent},
   {path: 'detalhe/:id/:phone', component: DetalheComponent},
   {path: 'json', component: ManipulandoJsonComponent},
