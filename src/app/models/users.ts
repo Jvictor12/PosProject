@@ -5,4 +5,5 @@ export class User {
     public phone: String = ''
     public cpf: String = ''
     public password: String = ''
+    public dateBirth: String = ''
 }

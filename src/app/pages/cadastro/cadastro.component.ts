@@ -22,6 +22,7 @@ export class CadastroComponent {
       Validators.required, GenericValidator.isValidCPF()
     ])],
     phone: ['', Validators.required],
+    dataNascimento: ['', Validators.required],
     password: ['', Validators.required]
   });
 
@@ -49,6 +50,8 @@ export class CadastroComponent {
     this.user.email = this.addressForm.controls['email'].value
     if(this.addressForm.controls['cpf'].value)
     this.user.cpf = this.addressForm.controls['cpf'].value
+    if(this.addressForm.controls['dataNascimento'].value)
+    this.user.dateBirth = this.addressForm.controls['dataNascimento'].value
     if(this.addressForm.controls['password'].value)
     this.user.password = this.addressForm.controls['password'].value
     alert('Voce cadastrou')

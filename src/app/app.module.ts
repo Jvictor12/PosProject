@@ -31,6 +31,9 @@ import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.compo
 import { EditarComponent } from './pages/editar/editar.component';
 import { NgxMaskPipe, NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { UserService } from './services/user.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,10 @@ import { UserService } from './services/user.service';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
     MatListModule
   ],
   providers: [provideNgxMask(), UserService],
