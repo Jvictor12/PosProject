@@ -12,12 +12,17 @@ const httpOptions = {
 })
 export class UserService {
   BASE_URL: String = 'http://localhost:3000/' 
+  FIREBASE_URL: String = ''
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.BASE_URL + 'users')
   }
+
+  login(data: any): Observable<User> {
+    return this.http.post<User>(this.FIREBASE_URL + 'users', data, httpOptions)
+  } 
 
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.BASE_URL + 'users', user, httpOptions)

@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AutorizacaoService } from 'src/app/services/autorizacao.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit{
 
   constructor (
     private fb: FormBuilder,
-    private autorizacaoService: AutorizacaoService
+    private autorizacaoService: AutorizacaoService,
+    private service: UserService
   ){}
 
   ngOnInit() {
@@ -51,7 +53,21 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(): void {
-    alert('Thanks!');
-    this.loginClick();
+    if (this.autorizacaoService.obterLoginStatus()) {
+      this.autorizacaoService.deslogar()
+    } else {
+      // this.autorizacaoService.autorizar()
+      this.service.login({user: 'fdsfds'}).subscribe({
+        next: (response) => {
+          console.log(response)
+          // alert("Login realizado com sucesso")
+          this.autorizacaoService.autorizar()
+        },
+        error: (err: any) => {
+          console.log(err)
+          alert("Ocorreu um erro")
+        }
+      })
+    }
   }
 }
